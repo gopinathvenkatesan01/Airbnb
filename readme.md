@@ -1,5 +1,9 @@
 # Airbnb Analysis with Tableau
 
+<p align="center">
+  <img src="https://github.com/gopinathvenkatesan01/Airbnb/assets/162252390/243a3c0f-0103-4798-9472-d155e71327b4" alt="Project WorkFlow" width="690" height="390">
+ </p>
+
 **Introduction**
 
 Built an interactive Tableau dashboard to analyze the Airbnb data extracted from MongoDB Atlas. Developed a Streamlit application for trend analysis, pattern recognition, and data insights using Exploratory Data Analysis (EDA). Explored variations in price, location, property type, and seasons through dynamic plots and charts.
