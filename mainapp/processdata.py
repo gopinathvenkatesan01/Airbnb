@@ -6,7 +6,7 @@ from mongo import get_mongo_client
 import json
 
 mongo = get_mongo_client()
-db = mongo["airbnb"]  # Specify the correct database name
+db = mongo["airbnb"]  
 collection = db["airbnb_sample"]
 
 
@@ -106,10 +106,16 @@ def processValues(value):
         return "Not specified"
     else:
         return value
+    
+def processnanValues(value):
+    if value == "nan":
+        return "Not specified"
+    else:
+        return value
 
 
-@st.cache_data
 def processData():
+    st.toast('Processing Data')
     airbnb_data = list(collection.find())
     df = pd.DataFrame(airbnb_data)
 
@@ -218,6 +224,7 @@ def processData():
     airbnb["bedrooms"].fillna(0, inplace=True)
     airbnb["beds"].fillna(0, inplace=True)
     airbnb["bathrooms"].fillna(0, inplace=True)
+    airbnb['bathrooms'].round()
 
     # converting data types
     airbnb["latitude"] = airbnb["latitude"].apply(lambda x: float(x))
@@ -240,8 +247,9 @@ def processData():
     airbnb["host_response_time"] = airbnb["host_response_time"].apply(
         lambda x: processValues(x)
     )
+    airbnb['host_response_rate'] = airbnb['host_response_rate'].astype(str)
     airbnb["host_response_rate"] = airbnb["host_response_rate"].apply(
-        lambda x: processValues(x)
+        lambda x: processnanValues(x)
     )
 
     # Processing true & false to Yes & no

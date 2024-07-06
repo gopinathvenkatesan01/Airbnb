@@ -114,8 +114,6 @@ def host(country, column_name, column_value):
 def column_main(values, label, country):
     col1, col2, col3 = st.columns(3)
     with col1:
-        a = str(values) + "_column_value_list"
-        b = str(values) + "_column_value"
         a = column_value(country=country, column_name=values)
         b = st.selectbox(label=label, options=a)
         values = host(country=country, column_name=values, column_value=b)
@@ -125,8 +123,6 @@ def column_main(values, label, country):
 def column_main_min(values, label, country):
     col1, col2, col3 = st.columns(3)
     with col1:
-        a = str(values) + "_column_value_list"
-        b = str(values) + "_column_value"
         a = column_value_names(country=country, column_name=values, order="asc")
         b = st.selectbox(label=label, options=a)
         values = host(country=country, column_name=values, column_value=b)
@@ -136,8 +132,6 @@ def column_main_min(values, label, country):
 def column_main_max(values, label, country):
     col1, col2, col3 = st.columns(3)
     with col1:
-        a = str(values) + "_column_value_list"
-        b = str(values) + "_column_value"
         a = column_value_names(country=country, column_name=values, order="desc")
         b = st.selectbox(label=label, options=a)
         values = host(country=country, column_name=values, column_value=b)
@@ -147,8 +141,6 @@ def column_main_max(values, label, country):
 def column_not_specified(values, label, country):
     col1, col2, col3 = st.columns(3)
     with col1:
-        a = str(values) + "_column_value_list"
-        b = str(values) + "_column_value"
         a = column_value_count_not_specified(country=country, column_name=values)
         b = st.selectbox(label=label, options=a)
         values = host(country=country, column_name=values, column_value=b)
