@@ -17,7 +17,7 @@ def main():
     if "firstrun" not in st.session_state:
         st.session_state.firstrun = True
 
-    page_icon_url = "https://raw.githubusercontent.com/gopiashokan/Airbnb-Analysis/main/airbnb_logo.png"
+    page_icon_url = "https://github.com/user-attachments/assets/435bfa2f-76fb-48d6-af2b-e7cf7107fcff"
     st.set_page_config(
         page_title="Airbnb Data Analysis", page_icon=page_icon_url, layout="wide"
     )
